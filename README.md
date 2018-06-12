@@ -9,7 +9,7 @@
 
 ## iOS Camp - Jeremy
 
-![image](https://github.com/JeremyXue77/slotMachine/blob/master/iOS/iOS%20SlotAnimation.gif)
+![image](https://github.com/JeremyXue77/slotMachine/blob/master/iOS/iOS.gif)
 
 ## Andorid Camp - Henry
 
