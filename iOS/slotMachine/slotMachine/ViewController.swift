@@ -99,9 +99,11 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         scrollView.isHidden = true
         effectImage.isHidden = false
         scrollView.layer.borderColor = UIColor.white.cgColor
+        
+        scrollView.scrollRectToVisible(CGRect(x: 0, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height), animated: true)
     }
     
-    func shineEffect() {
+    func shineEffect(isEnd:Bool) {
         
         let effectImage = UIImageView()
         
@@ -113,13 +115,15 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         
         view.addSubview(effectImage)
         
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             effectImage.alpha = 1
         }) { (finish) in
             UIView.animate(withDuration: 0.5, animations: {
                 effectImage.alpha = 0
-                self.auraView.isHidden = false
-                self.scrollView.layer.borderColor = UIColor.red.cgColor
+                if isEnd {
+                    self.auraView.isHidden = false
+                    self.scrollView.layer.borderColor = UIColor.red.cgColor
+                }
             })
         }
     }
@@ -148,19 +152,19 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         effectImage.isHidden = true
         
         var move:CGFloat = 0
+        shineEffect(isEnd: false)
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
             move += CGFloat(self.width)
             print(move)
             self.scrollView.scrollRectToVisible(CGRect(x: move, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height), animated: true)
             
-            if move > 9000 {
+            if move > 8000 {
                 timer.invalidate()
-                self.shineEffect()
+                self.shineEffect(isEnd: true)
             }
         }
     }
-    
     
     
     func addImageToScrollView(start:Int,end:Int) {
