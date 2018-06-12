@@ -1,0 +1,106 @@
+body
+  background-color: #000
+
+.smoke
+  width: 360px
+  height: 360px
+  position: relative
+  background-image: url(../img/gray_180x180.png)
+  background-position: 0 0
+  background-repeat: no-repeat
+  background-size: cover
+  animation-name: smoke-big
+  animation-timing-function: steps(30)
+  animation-duration: 1.5s
+  animation-iteration-count: infinite
+
+.draw
+  width: 120px
+  height: 150px
+  position: absolute
+  left: 120px
+  top: 105px
+  z-index: 5
+
+.card
+  width: 120px
+  height: 150px
+  position: absolute
+  z-index: 5
+  display: block
+  img
+    width: 100%
+    height: 100%
+
+.shine
+  width: 120px
+  height: 150px
+  position: absolute
+
+  img
+    width: 100%
+    height: 100%
+    animation-name: shine
+    animation-timing-function: linear
+    animation-duration: 1.5s
+    animation-iteration-count: infinite
+    transform: scale(1.25,1.23)
+
+.rank-bg
+  width: 120px
+  height: 150px
+  position: absolute
+  background-image: url(../img/card_slot_60x73.png)
+  background-position: 0 0
+  background-repeat: no-repeat
+  background-size: 600px 150px
+  animation-name: rank-bg
+  animation-timing-function: cubic-bezier(0,0,0,0)
+  animation-iteration-count: 6
+  animation-duration: .5s
+
+
+
+
+.character
+  width: 120px
+  height: 150px
+  position: absolute
+  background-repeat: no-repeat
+  background-size: cover
+  background-image: url(../img/6.png),url(../img/10.png),url(../img/20.png),url(../img/24.png),url(../img/27.png),url(../img/42.png),url(../img/46.png),url(../img/56.png),url(../img/69.png),url(../img/6.png)
+  background-position: 1080px 0px,960px 0px,840px 0px,720px 0px,600px 0px,480px 0px,360px 0px,240px 0px,120px 0px,0px 0px
+  animation-name: character
+  animation-timing-function: cubic-bezier(0,0,0,0)
+  animation-duration: 1s
+  animation-iteration-count: 3
+
+
+@keyframes rank-bg
+  0%
+    background-position: 0 0
+  100%
+    background-position: -600px 0px
+
+
+@keyframes character
+  0%
+    background-position: 1080px 0px, 960px 0px,840px 0px,720px 0px,600px 0px,480px 0px,360px 0px,240px 0px,120px 0px,0px 0px
+  100%
+    background-position: 0px 0px,-120px 0px,-240px 0px,-360px 0px,-480px 0px,-600px 0px,-720px 0px,-840px 0px,-960px 0px, -1080px 0px
+
+@keyframes shine
+  0%
+    opacity: 0
+  40%
+    opacity: 1
+  60%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes smoke-big
+  0%
+    background-position: 0 0px
+  100%
+    background-position: -10800px 0px
